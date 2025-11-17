@@ -1,7 +1,7 @@
 @use './common.scss' as *;
 
 body {
-    margin:0 30px;
+    margin: 0 30px;
     background-color: #f2f2f2;
     /* height: 100vh; */
 }
@@ -17,38 +17,55 @@ section {
 
 /* ---- 프로젝트 설명 카드 (왼측 부분) */
 
+
+
 .pj_info {
-    .pj_info_top {
-        .info_type {
-            li {}
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 200px;
+            .pj_info_top {
+                font-size: $font-14;
+                display: flex;
+                flex-flow: column nowrap;
+                gap:25px;
+                .info_type {
+                    display: flex;
+                    gap: 10px;
+
+                    li {
+                        color: $color-gray;
+                        font-family: $nene;
+                    }
+                }
+            }
         }
 
-        .pj_content {}
-
-        .pj_brand_name {}
-    }
-
-    .pj_info_bottom {
-        p {
-            span {}
-        }
-    }
-}
-
+.pj_content {
+                    line-height: 120%;
+                }
 
 
 .sub_title {
     display: flex;
     justify-content: space-between;
+
     p {
         font-family: $orbit;
-        font-size:$font-30;
-        a, .close_btn  {
+        font-size: $font-30;
+
+        a,
+        .close_btn {
             font-family: $orbit;
-            font-size:$font-24;}
+            font-size: $font-24;
+        }
     }
-    
+
 }
+
+.pj_brand_name { font-family: $nene;
+                    font-size: $font-14;
+                    font-weight: $font-m;
+                }
 
 .close_btn {}
 
@@ -67,76 +84,88 @@ section {
 header {
     @include display-op;
     display: flex;
-    flex-flow:column nowrap ;
+    flex-flow: column nowrap;
     justify-content: space-between;
+
     h1 {
-        width: 50px; height: 50px;
+        width: 50px;
+        height: 50px;
         margin-bottom: 30px;
+
         a {
-            width: 100%; height: 100%;
+            width: 100%;
+            height: 100%;
+
             img {
-                width: 100%; height: 100%;
+                width: 100%;
+                height: 100%;
             }
         }
     }
 
     h2 {
-        .about_btn,.work_btn{
-        @include cate;
-        margin-bottom: 20px;
+
+        .about_btn,
+        .work_btn {
+            @include cate;
+            margin-bottom: 20px;
         }
     }
+
     .work {
         margin-bottom: 20px;
         display: flex;
         flex-flow: column nowrap;
-        gap:20px;
+        gap: 20px;
+
         :nth-of-type(2) {
-            
-            padding:  20px 0 20px 15px;
+
+            padding: 20px 0 20px 15px;
             border-bottom: 1px solid #212121;
             border-top: 1px solid #212121;
         }
     }
-        
-    }
-    h3 {
-        cursor: pointer;
-        width: 100%;
-        padding-left:15px;
+
+}
+
+h3 {
+    cursor: pointer;
+    width: 100%;
+    padding-left: 15px;
     font-size: $font-24;
     font-family: $orbit;
-    }
-    h3:hover {
-        color:$color-point;
-    }
+}
+
+h3:hover {
+    color: $color-point;
+}
 
 /* ----------------------- 메인 */
 
 .intro_page {
     display: flex;
-    flex-flow:column nowrap ;
+    flex-flow: column nowrap;
     justify-content: space-between;
     @include display-op;
-    .sub_title {
-        
-        p {
-            
 
-        }
+    .sub_title {
+
+        p {}
     }
 
     .title {
         P {
             font-family: $nene;
         }
+
         P:first-child {
-            font-weight:$font-m ;
-            font-size:$font-80;
+            font-weight: $font-m ;
+            font-size: $font-80;
         }
+
         P:last-child {
-            font-weight:$font-m ;
-            font-size:$font-150;
+            font-weight: $font-m ;
+            font-size: $font-150;
         }
     }
 }
@@ -146,9 +175,11 @@ header {
 
 .about_page {
     @include display-op;
+
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
+    gap: 120px;
+
     .sub_title {
         p {
             .close {}
@@ -159,6 +190,7 @@ header {
         display: flex;
         flex-flow: column nowrap;
         gap: 60px;
+
         p {
             font-family: $orbit;
             font-size: $font-36;
@@ -167,45 +199,117 @@ header {
         }
 
         span {
-            letter-spacing: -1px;
+            letter-spacing: -1.3px;
             font-family: $orbit;
-            color:$color-gray01;
-            line-height: 140%;
-            font-size:$font-18;
+            color: $color-gray01;
+            line-height: 180%;
+            font-size: $font-18;
         }
     }
 
-    .skill {
-        li {
-            strong {}
+    .skill_wrap {
+        padding-right: 5%;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-end;
+
+        .skill {
+            width: fit-content;
+
+            li {
+                font-family: $nene;
+                margin-bottom: 10px;
+                font-size: $font-34;
+                color: $color-gray;
+
+                strong {
+                    font-weight: 200;
+                    font-size: $font-20;
+                    color: $color-gray;
+                    margin-right: 5px;
+                }
+            }
         }
     }
 }
 
 /* ----------------------- work 카드 wrap 공통 */
 
+.work_page .pj_wrap:nth-child(2) {
+border-bottom: 1px solid #767676;
+border-top: 1px solid #767676;
+padding: 25px 0;
+}
+
 .work_page {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap:25px;
+    padding: 30px 0;
+    width: 100%;
     .pj_wrap {
+        display: grid;
+        grid-template-columns: 2.5fr 7.5fr;
+        width: 96%;
         .pj_info {
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 200px;
             .pj_info_top {
+                font-size: $font-14;
+                display: flex;
+                flex-flow: column nowrap;
+                gap:25px;
                 .info_type {
-                    li {}
+                    display: flex;
+                    gap: 10px;
+
+                    li {
+                        color: $color-gray;
+                        font-family: $nene;
+                    }
                 }
 
-                .pj_content {}
+                .pj_content {
+                    line-height: 120%;
+                }
 
-                .pj_brand_name {}
+                .pj_brand_name {
+                    font-size: $font-14;
+                    font-weight: $font-m;
+                }
             }
 
             .pj_info_bottom {
-                p {
-                    span {}
+                
+                ul {
+                    li {
+                        font-size: $font-14;
+                        display: flex;
+                        margin-bottom: 20px;
+                        p {width: 120px;
+                            color: $color-gray01;
+
+                            span {}
+                        }
+                    }
                 }
+
             }
         }
 
         .pj_thumbnail {
-            img {}
+            display: flex;
+            gap:20px;
+            .thumbnain_img {
+                
+                width: 200px; background-color: aqua;
+                height: 200px;
+            }
+            img {
+                
+            }
         }
     }
 }
@@ -214,15 +318,44 @@ header {
 /* ----------------------- 프로젝트 전체 공통 */
 
 .pj_whole {
+    display: grid;
+    grid-template-columns: 1.8fr 8.2fr;
     .pj_info {
+        @include display-op;
         .pj_info_top {
+            
             .row1 {
-                .close {}
+                justify-content: space-between;
+                display: flex;
+                .close_btn {
+                    margin-right: 20px;
+                }
             }
 
             a {
                 /* 프로토타입 있는 경우 */
             }
+        
+            
         }
+        .pj_info_bottom {
+            ul {
+                    li {
+                        font-size: $font-14;
+                        display: flex;
+                        margin-bottom: 20px;
+                        p {width: 90px;
+                            color: $color-gray01;
+
+                            span {}
+                        }
+                    }
+                }
+        }
+    }
+    .pj_whole_img {
+        height: 300px;
+        background-color: darkgoldenrod;
+        width: 100%;
     }
 }
