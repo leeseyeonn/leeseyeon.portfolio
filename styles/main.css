@@ -1,0 +1,136 @@
+@charset "UTF-8";
+body {
+  margin: 0 30px;
+  background-color: #f2f2f2;
+  /* height: 100vh; */
+}
+
+section {
+  border: 2px solid red;
+}
+
+/* -------------------------공통 */
+/* ---- 프로젝트 설명 카드 (왼측 부분) */
+.sub_title {
+  display: flex;
+  justify-content: space-between;
+}
+.sub_title p {
+  font-family: "orbit", sans-serif;
+  font-size: 1.875rem;
+}
+.sub_title p a, .sub_title p .close_btn {
+  font-family: "orbit", sans-serif;
+  font-size: 1.5rem;
+}
+
+/* ----------------------- 헤더+메인 */
+.main_page_wrap {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  gap: 40px;
+}
+
+/* ----------------------- 헤더 */
+header {
+  padding: 30px 0;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+header h1 {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 30px;
+}
+header h1 a {
+  width: 100%;
+  height: 100%;
+}
+header h1 a img {
+  width: 100%;
+  height: 100%;
+}
+header h2 .about_btn, header h2 .work_btn {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 500;
+  font-size: 2.25rem;
+  margin-bottom: 20px;
+}
+header .work {
+  margin-bottom: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 20px;
+}
+header .work :nth-of-type(2) {
+  padding: 20px 0 20px 15px;
+  border-bottom: 1px solid #212121;
+  border-top: 1px solid #212121;
+}
+
+h3 {
+  cursor: pointer;
+  width: 100%;
+  padding-left: 15px;
+  font-size: 1.5rem;
+  font-family: "orbit", sans-serif;
+}
+
+h3:hover {
+  color: #FF4006;
+}
+
+/* ----------------------- 메인 */
+.intro_page {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  padding: 30px 0;
+  height: 100vh;
+}
+.intro_page .title P {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+}
+.intro_page .title P:first-child {
+  font-weight: 500;
+  font-size: 5rem;
+}
+.intro_page .title P:last-child {
+  font-weight: 500;
+  font-size: 9.375rem;
+}
+
+/* ----------------------- about */
+.about_page {
+  padding: 30px 0;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+.about_page .info {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 60px;
+}
+.about_page .info p {
+  font-family: "orbit", sans-serif;
+  font-size: 2.25rem;
+  line-height: 140%;
+}
+.about_page .info span {
+  letter-spacing: -1px;
+  font-family: "orbit", sans-serif;
+  color: #656565;
+  line-height: 140%;
+  font-size: 1.125rem;
+}
+/* ----------------------- work 카드 wrap 공통 */
+/* ----------------------- 프로젝트 전체 공통 */
+.pj_whole .pj_info .pj_info_top a {
+  /* 프로토타입 있는 경우 */
+}
+
+/*# sourceMappingURL=main.css.map */
