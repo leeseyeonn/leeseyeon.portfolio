@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donggubat</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'aox7gxq',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
+    <style>
+.pj_info {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 200px;
+}
+.pj_info .pj_info_top {
+  font-size: 0.875rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 25px;
+}
+.pj_info .pj_info_top .info_type {
+  display: flex;
+  gap: 10px;
+}
+.pj_info .pj_info_top .info_type li {
+  color: #999999;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+}
+
+.pj_content {
+  line-height: 120%;
+}
+
+        .pj_whole.active {
+  display: none;
+}
+
+.pj_whole {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+.pj_whole .pj_info {
+  position: fixed;
+  height: 100vh;
+  width: 18%;
+  padding-left: 20px !important;
+  padding: 30px 0;
+  height: 100vh;
+}
+.pj_whole .pj_info .pj_info_top .row1 {
+  justify-content: space-between;
+  display: flex;
+}
+.pj_whole .pj_info .pj_info_top .row1 .close_btn {
+  margin-right: 20px;
+}
+.pj_whole .pj_info .pj_info_top a {
+    margin-top: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #999;
+  width: max-content;
+  color:#999;
+}
+.pj_whole .pj_info .pj_info_bottom ul li {
+  font-size: 0.875rem;
+  display: flex;
+  margin-bottom: 20px;
+}
+.pj_whole .pj_info .pj_info_bottom ul li p {
+  width: 90px;
+  color: #656565;
+}
+.pj_whole .pj_info .pj_info_bottom .tools, .pj_whole .pj_info .pj_info_bottom .tools_app {
+  line-height: 150%;
+}
+.pj_whole .pj_info.active {
+  display: none;
+}
+
+.pj_whole_img {
+  margin-left: 18%;
+  height: 100%;
+  background-color: darkgoldenrod;
+  width: 100%;
+}
+.pj_whole_img img {
+  display: block;
+}
+
+.pj_whole_img.active {
+  margin-left: 0;
+}
+    </style>
+</head>
+<body>
+    <!-- 동구밭 전체 -->
+    <section class="dgb_whole pj_whole">
+        <div class="pj_info">
+            <div class="pj_info_top">
+                <div class="row1">
+                    <ul class="info_type">
+                        <li>UXUI</li>
+                    </ul>
+                    <p><button type="button" class="close_btn">닫기 X</button></p>
+                </div>
+                <p class="pj_content">웹사이트 UXUI 개선 프로젝트</p>
+                <h4 class="pj_brand_name">동구밭</h4>
+                <a href="#">프로토타입</a>
+            </div>
+            <div class="pj_info_bottom">
+                <ul>
+                    <li>
+                        <p class="duration">작업기간</p><span>2주</span>
+                    </li>
+                    <li>
+                        <p class="role">본인 참여도</p><span>100%</span>
+                    </li>
+                    <li>
+                        <p class="tools">사용툴</p>
+                        <span class="tools_app">Figma, Midjourney,<br>Photoshop</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pj_whole_img">
+            <img src="#" alt="">
+            <img src="#" alt="">
+        </div>
+    </section>
+    <script>
+        const closeBtn = document.querySelector('.close_btn')
+        const whAllimg = document.querySelector('.pj_whole .pj_whole_img')
+        const whAllinfo = document.querySelector('.pj_whole .pj_info')
+        
+        console.log(closeBtn,whAllimg,whAllinfo)
+
+        closeBtn.addEventListener('click', () => {
+            whAllinfo.classList.add('active')
+            whAllimg.classList.add('active')
+        })
+    </script>
+</body>
+</html>

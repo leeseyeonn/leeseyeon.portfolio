@@ -9,15 +9,16 @@
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/main.css">
     <script>
-        (function (d) {
-            var config = {
-                kitId: 'aox7gxq',
-                scriptTimeout: 3000,
-                async: true
-            },
-                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        (function(d) {
+          var config = {
+            kitId: 'aox7gxq',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
         })(document);
-    </script>
+      </script>
+    <script src="./scripts/index.js" defer></script>
 </head>
 
 <body>
@@ -35,6 +36,9 @@
                 <h3 class="project_name">MEAL.B</h3>
                 <h3 class="project_name">동구밭 UXUI 리뉴얼</h3>
                 <h3 class="project_name">스파이더 UXUI 리뉴얼</h3>
+                <div class="hover_img hvr_meal"> <img src="./images/taco.png" alt=""></div>
+                <div class="hover_img hvr_dgb"> <img src="./images/taco.png" alt=""></div>
+                <div class="hover_img hvr_spyder"> <img src="./images/taco.png" alt=""></div>
             </div>
         </header>
 
@@ -46,17 +50,20 @@
                     <p>Branding, Motion graphic, UXUI</p>
                     <p><a href="mailto:zzin8520@gmail.com">Contact</a></p>
                 </div>
-                <div class="title">
-                    <p>Hi! I'm</p>
-                    <p>leeseyeon</p>
+                <div class="title_wrap">
+                    <div class="title">
+                        <p>Hi! — I'm</p>
+                        <p>leeseyeon</p>
+                    </div>
                 </div>
+                
             </section>
 
             <!-- about 페이지 -->
             <section class="about_page">
                 <div class="sub_title">
                     <p>Branding, Motion graphic, UXUI</p>
-                    <p><button type="button" class="close_btn">닫기</button></p>
+                    <!-- <p><button type="button" class="close_btn">닫기</button></p> -->
                 </div>
                 <div class="info">
                     <p>문제를 먼저 보고,<br>해결 방식을 디자인하는 사람</p>
@@ -67,18 +74,24 @@
                         필요한 선택이 명확하게 보이도록 정보와 동선을 정리합니다.<br>
                         결국 편하게 사용할 수 있는 경험이 좋은 제품을 만든다고 생각합니다.
                     </span>
-                    <div class="skill_wrap">
-                        <ul class="skill">
-                            <li><strong>• </strong>Figma</li>
-                            <li><strong>• </strong>Photoshop</li>
-                            <li><strong>• </strong>Illustrator</li>
-                            <li><strong>• </strong>After Effects</li>
-                            <li><strong>• </strong>Premiere Pro</li>
-                            <li><strong>• </strong>HTML5</li>
-                            <li><strong>• </strong>CSS3</li>
-                            <li><strong>• </strong>Javascript</li>
+                    <div class="skill_wrap_wrap">
+                        <ul class="skill_wrap">
+                            <li class="sw sw1">
+                                <p class="skill_title">Design//</p>
+                                <span class="skill_content">Figma, Illustrator, Photoshop</span>
+                            </li>
+                            <li class="sw sw2">
+                                <p class="skill_title">Code//</p>
+                                <span class="skill_content">HTML5, CSS3, JavaScript</span>
+                            </li>
+                            <li class="sw sw3">
+                                <p class="skill_title">Motion//</p>
+                                <span class="skill_content">After Effects, Premiere Pro</span>
+                            </li>
+                            
                         </ul>
                     </div>
+                    
 
                 </div>
             </section>
@@ -104,7 +117,8 @@
                                     <p class="role">본인 참여도</p><span>100%</span>
                                 </li>
                                 <li>
-                                    <p class="tools">사용툴</p><span>Figma, Midjourney, Photoshop</span>
+                                    <p class="tools">사용툴</p>
+                                    <span class="tools_app">Figma, Midjourney,<br>Photoshop</span>
                                 </li>
                             </ul>
                         </div>
@@ -116,71 +130,75 @@
                     </div>
                 </div>
                 <!-- 프로젝트 목록 카드 동구밭 -->
-                <div class="pj_dgb pj_wrap">
-                    <div class="pj_info">
-                        <div class="pj_info_top">
-                            <ul class="info_type">
-                                <li>UXUI</li>
-                            </ul>
-                            <p class="pj_content">웹사이트 UXUI 개선 프로젝트 ｜ CAFE24</p>
-                            <h4 class="pj_brand_name">동구밭</h4>
+                <div class="pj_dgb pj_wrap" >
+                    
+                        <div class="pj_info">
+                            <div class="pj_info_top">
+                                <ul class="info_type">
+                                    <li>UXUI</li>
+                                </ul>
+                                <p class="pj_content">웹사이트 UXUI 개선 프로젝트 ｜ CAFE24</p>
+                                <h4 class="pj_brand_name">동구밭</h4>
+                            </div>
+                            <div class="pj_info_bottom">
+                                <ul>
+                                    <li>
+                                        <p class="duration">작업기간</p><span>2주</span>
+                                    </li>
+                                    <li>
+                                        <p class="role">본인 참여도</p><span>100%</span>
+                                    </li>
+                                    <li>
+                                        <p class="tools">사용툴</p>
+                                        <span class="tools_app">Figma, Midjourney,<br>Photoshop</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="pj_info_bottom">
-                            <ul>
-                                <li>
-                                    <p class="duration">작업기간</p><span>2주</span>
-                                </li>
-                                <li>
-                                    <p class="role">본인 참여도</p><span>100%</span>
-                                </li>
-                                <li>
-                                    <p class="tools">사용툴</p><span>Figma, Midjourney, Photoshop</span>
-                                </li>
-                            </ul>
+                        <div class="pj_thumbnail">
+                            <div class="thumbnain_img"><!-- <img src="./images/sample_01.png" alt=""> --></div>
+                            <div class="thumbnain_img"><!-- <img src="./images/sample_02.png" alt=""> --></div>
+                            <div class="thumbnain_img"><!-- <img src="./images/sample_03.png" alt=""> --></div>
                         </div>
-                    </div>
-                    <div class="pj_thumbnail">
-                        <div class="thumbnain_img"><!-- <img src="./images/sample_01.png" alt=""> --></div>
-                        <div class="thumbnain_img"><!-- <img src="./images/sample_02.png" alt=""> --></div>
-                        <div class="thumbnain_img"><!-- <img src="./images/sample_03.png" alt=""> --></div>
-                    </div>
+                    
+                    
                 </div>
                 <!-- 프로젝트 목록 카드 스파이더 -->
                 <div class="pj_spyder pj_wrap">
-                    <div class="pj_info">
-                        <div class="pj_info_top">
-                            <ul class="info_type">
-                                <li>UXUI</li>
-                            </ul>
-                            <p class="pj_content">웹사이트 UXUI 개선 프로젝트</p>
-                            <h4 class="pj_brand_name">SPYDER</h4>
+                    
+                        <div class="pj_info">
+                            <div class="pj_info_top">
+                                <ul class="info_type">
+                                    <li>UXUI</li>
+                                </ul>
+                                <p class="pj_content">웹사이트 UXUI 개선 프로젝트</p>
+                                <h4 class="pj_brand_name">SPYDER</h4>
+                            </div>
+                            <div class="pj_info_bottom">
+                                <ul>
+                                    <li>
+                                        <p class="duration">작업기간</p><span>2주</span>
+                                    </li>
+                                    <li>
+                                        <p class="role">본인 참여도</p><span>100%</span>
+                                    </li>
+                                    <li>
+                                        <p class="tools">사용툴</p>
+                                        <span class="tools_app">Figma, Midjourney,<br>Photoshop</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="pj_info_bottom">
-                            <ul>
-                                <li>
-                                    <p class="duration">작업기간</p><span>2주</span>
-                                </li>
-                                <li>
-                                    <p class="role">본인 참여도</p><span>100%</span>
-                                </li>
-                                <li>
-                                    <p class="tools">사용툴</p><span>Figma, Midjourney, Photoshop</span>
-                                </li>
-                            </ul>
+                        <div class="pj_thumbnail">
+                            <div class="thumbnain_img"><!-- <img src="./images/sample_01.png" alt=""> --></div>
+                            <div class="thumbnain_img"><!-- <img src="./images/sample_02.png" alt=""> --></div>
+                            <div class="thumbnain_img"><!-- <img src="./images/sample_03.png" alt=""> --></div>
                         </div>
-                    </div>
-                    <div class="pj_thumbnail">
-                        <div class="thumbnain_img"><!-- <img src="./images/sample_01.png" alt=""> --></div>
-                        <div class="thumbnain_img"><!-- <img src="./images/sample_02.png" alt=""> --></div>
-                        <div class="thumbnain_img"><!-- <img src="./images/sample_03.png" alt=""> --></div>
-                    </div>
+                    
+                    
                 </div>
 
             </section>
-
-
-
-
         </main>
 
 
@@ -188,64 +206,111 @@
 
     <!-- 밀비 전체 -->
     <section class="mealb_whole pj_whole">
+        <!-- <div class="open">
+            <h1><a href="./index.html"><img src="./images/taco.png" alt=""></a></h1>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_68_62" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                <rect x="1.04907e-06" y="24" width="24" height="24" transform="rotate(-90 1.04907e-06 24)" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_68_62)">
+                <path d="M18.6345 11.9996L12.9808 17.6533L11.927 16.5996L16.5115 11.9996L11.927 7.39957L12.9808 6.34582L18.6345 11.9996ZM12.6538 11.9996L7.00004 17.6533L5.94629 16.5996L10.5308 11.9996L5.94629 7.39957L7.00004 6.34582L12.6538 11.9996Z" fill="#212121"/>
+                </g>
+                </svg>
+                
+        </div> -->
+        <div class="row1">
+            <h1><a href="./index.html"><img src="./images/taco.png" alt=""></a></h1>
+            <p><button type="button" class="close_btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_68_62" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                    <rect x="1.04907e-06" y="24" width="24" height="24" transform="rotate(-90 1.04907e-06 24)" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_68_62)">
+                    <path d="M18.6345 11.9996L12.9808 17.6533L11.927 16.5996L16.5115 11.9996L11.927 7.39957L12.9808 6.34582L18.6345 11.9996ZM12.6538 11.9996L7.00004 17.6533L5.94629 16.5996L10.5308 11.9996L5.94629 7.39957L7.00004 6.34582L12.6538 11.9996Z" fill="#212121"/>
+                    </g>
+                    </svg>
+                    
+                </button></p>
+        </div>
         <div class="pj_info">
+            
             <div class="pj_info_top">
-                <div class="row1">
-                    <ul class="info_type">
-                        <li>BRANDING</li>
-                        <li>UXUI</li>
-                    </ul>
-                    <p><button type="button" class="close_btn">닫기</button></p>
-                </div>
-                <p class="pj_content">한눈에 알려주는<br>스마트 식단 가이드 제작</p>
-                <h4 class="pj_brand_name">MEAL.B</h4>
+                
+                    
+                        <ul class="info_type">
+                            <li>BRANDING</li>
+                            <li>UXUI</li>
+                        </ul>
+                        <p class="pj_content">한눈에 알려주는<br>스마트 식단 가이드 제작</p>
+                    <h4 class="pj_brand_name">MEAL.B</h4>
+                    <a href="#" class="link_pro">프로토타입</a>
+                    
+                    
+                    
+                
+                
             </div>
             <div class="pj_info_bottom">
-                            <ul>
-                                <li>
-                                    <p class="duration">작업기간</p><span>4주</span>
-                                </li>
-                                <li>
-                                    <p class="role">본인 참여도</p><span>100%</span>
-                                </li>
-                                <li>
-                                    <p class="tools">사용툴</p><span>Figma, Midjourney, Photoshop</span>
-                                </li>
-                            </ul>
-                        </div>
+                <ul>
+                    <li>
+                        <p class="duration">작업기간</p><span>4주</span>
+                    </li>
+                    <li>
+                        <p class="role">본인 참여도</p><span>100%</span>
+                    </li>
+                    <li>
+                        <p class="tools">사용툴</p>
+                        <span class="tools_app">Figma, Midjourney,<br>Photoshop</span>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="pj_whole_img">
-            <img src="#" alt="">
+            <img src="./images/sample_01.png" alt="">
             <img src="#" alt="">
         </div>
     </section>
     <!-- 동구밭 전체 -->
-    <section class="mealb_whole pj_whole">
+    <section class="dgb_whole pj_whole">
         <div class="pj_info">
             <div class="pj_info_top">
                 <div class="row1">
-                    <ul class="info_type">
-                        <li>UXUI</li>
-                    </ul>
-                    <p><button type="button" class="close_btn">닫기</button></p>
+                    <h1><a href="./index.html"><img src="./images/taco.png" alt=""></a></h1>
+                    <p><button type="button" class="close_btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_68_62" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                            <rect x="1.04907e-06" y="24" width="24" height="24" transform="rotate(-90 1.04907e-06 24)" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_68_62)">
+                            <path d="M18.6345 11.9996L12.9808 17.6533L11.927 16.5996L16.5115 11.9996L11.927 7.39957L12.9808 6.34582L18.6345 11.9996ZM12.6538 11.9996L7.00004 17.6533L5.94629 16.5996L10.5308 11.9996L5.94629 7.39957L7.00004 6.34582L12.6538 11.9996Z" fill="#212121"/>
+                            </g>
+                            </svg>
+                            
+                        </button></p>
                 </div>
+                
+                <ul class="info_type">
+                    <li>UXUI</li>
+                </ul>
                 <p class="pj_content">웹사이트 UXUI 개선 프로젝트</p>
                 <h4 class="pj_brand_name">동구밭</h4>
-                <a href="#">프로토타입</a>
+                <a href="#" class="link_pro">프로토타입</a>
+            
             </div>
             <div class="pj_info_bottom">
-                            <ul>
-                                <li>
-                                    <p class="duration">작업기간</p><span>2주</span>
-                                </li>
-                                <li>
-                                    <p class="role">본인 참여도</p><span>100%</span>
-                                </li>
-                                <li>
-                                    <p class="tools">사용툴</p><span>Figma, Midjourney, Photoshop</span>
-                                </li>
-                            </ul>
-                        </div>
+                <ul>
+                    <li>
+                        <p class="duration">작업기간</p><span>2주</span>
+                    </li>
+                    <li>
+                        <p class="role">본인 참여도</p><span>100%</span>
+                    </li>
+                    <li>
+                        <p class="tools">사용툴</p>
+                        <span class="tools_app">Figma, Midjourney,<br>Photoshop</span>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="pj_whole_img">
             <img src="#" alt="">
@@ -254,31 +319,44 @@
     </section>
 
     <!-- 스파이더 전체 -->
-    <section class="mealb_whole pj_whole">
+    <section class="spyder_whole pj_whole">
         <div class="pj_info">
             <div class="pj_info_top">
                 <div class="row1">
-                    <ul class="info_type">
-                        <li>UXUI</li>
-                    </ul>
-                    <p><button type="button" class="close_btn">닫기</button></p>
+                    <h1><a href="./index.html"><img src="./images/taco.png" alt=""></a></h1>
+                    <p><button type="button" class="close_btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_68_62" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                        <rect x="1.04907e-06" y="24" width="24" height="24" transform="rotate(-90 1.04907e-06 24)" fill="#D9D9D9"/>
+                        </mask>
+                        <g mask="url(#mask0_68_62)">
+                        <path d="M18.6345 11.9996L12.9808 17.6533L11.927 16.5996L16.5115 11.9996L11.927 7.39957L12.9808 6.34582L18.6345 11.9996ZM12.6538 11.9996L7.00004 17.6533L5.94629 16.5996L10.5308 11.9996L5.94629 7.39957L7.00004 6.34582L12.6538 11.9996Z" fill="#212121"/>
+                        </g>
+                        </svg>
+                        </button></p>
                 </div>
+                
+                <ul class="info_type">
+                    <li>UXUI</li>
+                </ul>
                 <p class="pj_content">웹사이트 UXUI 개선 프로젝트</p>
                 <h4 class="pj_brand_name">SPYDER</h4>
+                <a href="#" class="link_pro">프로토타입</a>
             </div>
+            
             <div class="pj_info_bottom">
-                            <ul>
-                                <li>
-                                    <p class="duration">작업기간</p><span>2주</span>
-                                </li>
-                                <li>
-                                    <p class="role">본인 참여도</p><span>100%</span>
-                                </li>
-                                <li>
-                                    <p class="tools">사용툴</p><span>Figma, Midjourney, Photoshop</span>
-                                </li>
-                            </ul>
-                        </div>
+                <ul>
+                    <li>
+                        <p class="duration">작업기간</p><span>2주</span>
+                    </li>
+                    <li>
+                        <p class="role">본인 참여도</p><span>100%</span>
+                    </li>
+                    <li>
+                        <p class="tools">사용툴</p>
+                        <span class="tools_app">Figma, Midjourney,<br>Photoshop</span>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="pj_whole_img">
             <img src="#" alt="">

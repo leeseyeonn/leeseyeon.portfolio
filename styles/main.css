@@ -1,12 +1,7 @@
 @charset "UTF-8";
 body {
-  margin: 0 30px;
   background-color: #f2f2f2;
-  /* height: 100vh; */
-}
-
-section {
-  border: 2px solid red;
+  height: 100vh;
 }
 
 /* -------------------------공통 */
@@ -25,6 +20,7 @@ section {
 .pj_info .pj_info_top .info_type {
   display: flex;
   gap: 10px;
+  font-family: "neue-haas-grotesk-display", sans-serif;
 }
 .pj_info .pj_info_top .info_type li {
   color: #999999;
@@ -50,25 +46,26 @@ section {
 }
 
 .pj_brand_name {
-  font-family: "neue-haas-grotesk-display", sans-serif;
-  font-size: 0.875rem;
+  font-family: "archivo", sans-serif;
+  font-size: 1.125rem;
   font-weight: 500;
 }
 
 /* ----------------------- 헤더+메인 */
 .main_page_wrap {
-  display: grid;
-  grid-template-columns: 2fr 8fr;
-  gap: 40px;
+  padding: 0 30px;
 }
 
 /* ----------------------- 헤더 */
 header {
+  position: fixed;
   padding: 30px 0;
   height: 100vh;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
+  margin-right: 40px;
+  width: 20%;
 }
 header h1 {
   width: 50px;
@@ -91,15 +88,64 @@ header h2 .work_btn {
   margin-bottom: 20px;
 }
 header .work {
-  margin-bottom: 20px;
+  position: relative;
+  margin-bottom: 50px;
   display: flex;
   flex-flow: column nowrap;
   gap: 20px;
 }
-header .work :nth-of-type(2) {
+header .work h3 {
+  width: 100%;
+}
+header .work h3:nth-of-type(2) {
   padding: 20px 0 20px 15px;
   border-bottom: 1px solid #212121;
   border-top: 1px solid #212121;
+}
+header .work .hover_img img {
+  width: 100%;
+  height: 100%;
+}
+header .work .hover_img {
+  position: absolute;
+  width: 100%;
+}
+header .work .hvr_meal {
+  display: none;
+  width: 150px !important;
+  height: 150px;
+  top: 10%;
+  left: 105%;
+  background-color: aqua;
+}
+header .work .hvr_dgb {
+  display: none;
+  width: 160px !important;
+  height: 160px;
+  top: 20%;
+  left: 120%;
+  background-color: yellowgreen;
+}
+header .work .hvr_spyder {
+  display: none;
+  width: 160px !important;
+  height: 160px;
+  top: 30%;
+  left: 110%;
+  background-color: violet;
+}
+header .work h3:nth-of-type(1):hover ~ .hvr_meal {
+  display: block;
+}
+header .work h3:nth-of-type(2):hover ~ .hvr_dgb {
+  display: block;
+}
+header .work h3:nth-of-type(3):hover ~ .hvr_spyder {
+  display: block;
+}
+
+header.active {
+  display: none;
 }
 
 h3 {
@@ -115,6 +161,13 @@ h3:hover {
 }
 
 /* ----------------------- 메인 */
+main {
+  margin-left: 22%;
+  position: absolute;
+  width: 76%;
+  padding-right: 20px;
+}
+
 .intro_page {
   display: flex;
   flex-flow: column nowrap;
@@ -122,16 +175,29 @@ h3:hover {
   padding: 30px 0;
   height: 100vh;
 }
+.intro_page .title_wrap {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+}
+.intro_page .title {
+  width: max-content;
+}
 .intro_page .title P {
   font-family: "neue-haas-grotesk-display", sans-serif;
 }
 .intro_page .title P:first-child {
+  width: max-content;
   font-weight: 500;
   font-size: 5rem;
 }
 .intro_page .title P:last-child {
   font-weight: 500;
   font-size: 9.375rem;
+}
+
+.intro_page.active {
+  display: none;
 }
 
 /* ----------------------- about */
@@ -159,26 +225,33 @@ h3:hover {
   line-height: 180%;
   font-size: 1.125rem;
 }
-.about_page .skill_wrap {
-  padding-right: 5%;
+.about_page .skill_wrap_wrap {
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-end;
 }
-.about_page .skill_wrap .skill {
-  width: fit-content;
+.about_page .skill_wrap_wrap .skill_wrap {
+  padding-right: 80px;
+  margin-top: 80px;
+  width: max-content;
+  float: right;
+  display: flex;
+  gap: 60px;
 }
-.about_page .skill_wrap .skill li {
-  font-family: "neue-haas-grotesk-display", sans-serif;
-  margin-bottom: 10px;
-  font-size: 2.125rem;
-  color: #999999;
+.about_page .skill_wrap_wrap .skill_wrap .sw .skill_title {
+  letter-spacing: 0px;
+  font-family: "archivo", sans-serif;
+  font-size: 1rem;
+  color: #212121;
 }
-.about_page .skill_wrap .skill li strong {
-  font-weight: 200;
-  font-size: 1.25rem;
-  color: #999999;
-  margin-right: 5px;
+.about_page .skill_wrap_wrap .skill_wrap .sw .skill_content {
+  letter-spacing: 0px;
+  font-family: "archivo", sans-serif;
+  font-size: 1rem;
+  color: #212121;
+}
+.about_page.active {
+  display: none;
 }
 
 /* ----------------------- work 카드 wrap 공통 */
@@ -188,17 +261,47 @@ h3:hover {
   padding: 25px 0;
 }
 
+.work_page .pj_info {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 200px;
+}
+.work_page .pj_info .pj_info_top {
+  font-size: 0.875rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 25px;
+}
+.work_page .pj_info .pj_info_top .info_type {
+  display: flex;
+  gap: 10px;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+}
+.work_page .pj_info .pj_info_top .info_type li {
+  color: #999999;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+}
+.work_page .pj_content {
+  line-height: 120%;
+}
 .work_page {
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
+  /* align-items: center; */
   gap: 25px;
   padding: 30px 0;
-  width: 100%;
 }
 .work_page .pj_wrap {
+  cursor: pointer;
   display: grid;
   grid-template-columns: 2.5fr 7.5fr;
+  width: 100%;
+}
+.work_page .pj_wrap .tools,
+.work_page .pj_wrap .tools_app {
+  line-height: 150%;
+}
+.work_page .pj_wrap {
   width: 96%;
 }
 .work_page .pj_wrap .pj_info {
@@ -218,14 +321,16 @@ h3:hover {
 }
 .work_page .pj_wrap .pj_info .pj_info_top .info_type li {
   color: #999999;
-  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-family: "archivo", sans-serif;
+  font-weight: 400;
 }
 .work_page .pj_wrap .pj_info .pj_info_top .pj_content {
   line-height: 120%;
 }
 .work_page .pj_wrap .pj_info .pj_info_top .pj_brand_name {
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   font-weight: 500;
+  color: red;
 }
 .work_page .pj_wrap .pj_info .pj_info_bottom ul li {
   font-size: 0.875rem;
@@ -245,24 +350,70 @@ h3:hover {
   background-color: aqua;
   height: 200px;
 }
+.work_page.active {
+  display: none;
+}
+
 /* ----------------------- 프로젝트 전체 공통 */
-.pj_whole {
-  display: grid;
-  grid-template-columns: 1.8fr 8.2fr;
+.pj_whole.active {
+  display: none;
 }
-.pj_whole .pj_info {
-  padding: 30px 0;
-  height: 100vh;
+
+.pj_whole .row1 {
+  position: fixed;
+  background-color: blueviolet;
+  padding-top: 10px;
+  width: 15%;
 }
-.pj_whole .pj_info .pj_info_top .row1 {
+.pj_whole .row1 h1 {
+  margin-left: 20px;
+  width: 35px;
+  height: 35px;
+}
+.pj_whole .row1 h1 a {
+  width: 100%;
+  height: 100%;
+}
+.pj_whole .row1 h1 a img {
+  width: 100%;
+  height: 100%;
+}
+.pj_whole .row1 {
   justify-content: space-between;
   display: flex;
+  align-items: center;
 }
-.pj_whole .pj_info .pj_info_top .row1 .close_btn {
+.pj_whole .row1 p .close_btn {
   margin-right: 20px;
 }
-.pj_whole .pj_info .pj_info_top a {
-  /* 프로토타입 있는 경우 */
+.pj_whole .row1 p .close_btn svg {
+  transform: rotate(180deg);
+}
+.pj_whole {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+.pj_whole .pj_info {
+  padding: 30px 0 0 20px !important;
+  position: fixed;
+  top: 45px;
+  height: 100vh;
+  width: 15%;
+  padding: 30px 0;
+  height: 100vh;
+  transform: translateX(0);
+  transition: transform 0.2s ease;
+}
+.pj_whole .pj_info .pj_info_top .row2 {
+  background-color: darkgreen;
+}
+.pj_whole .pj_info .pj_info_top .link_pro {
+  margin-top: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #999;
+  width: max-content;
+  color: #999;
 }
 .pj_whole .pj_info .pj_info_bottom ul li {
   font-size: 0.875rem;
@@ -273,10 +424,28 @@ h3:hover {
   width: 90px;
   color: #656565;
 }
-.pj_whole .pj_whole_img {
-  height: 300px;
-  background-color: darkgoldenrod;
+.pj_whole .pj_info .pj_info_bottom .tools,
+.pj_whole .pj_info .pj_info_bottom .tools_app {
+  line-height: 150%;
+}
+.pj_whole .pj_info.active {
+  transform: translateX(-400px);
+}
+
+.pj_whole_img {
+  margin-left: 15%;
+  height: 5000px;
+  background-color: linear-gradient(0deg, rgb(34, 193, 195) 0%, rgb(253, 187, 45) 100%);
   width: 100%;
+}
+.pj_whole_img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.pj_whole_img.active {
+  margin-left: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

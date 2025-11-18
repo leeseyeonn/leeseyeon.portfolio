@@ -1,14 +1,12 @@
 @use './common.scss' as *;
 
 body {
-    margin: 0 30px;
+
     background-color: #f2f2f2;
-    /* height: 100vh; */
+    height: 100vh;
 }
 
-section {
-    @include check1;
-}
+section {}
 
 
 
@@ -20,29 +18,32 @@ section {
 
 
 .pj_info {
-            display: flex;
-            flex-flow: column nowrap;
-            gap: 200px;
-            .pj_info_top {
-                font-size: $font-14;
-                display: flex;
-                flex-flow: column nowrap;
-                gap:25px;
-                .info_type {
-                    display: flex;
-                    gap: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 200px;
 
-                    li {
-                        color: $color-gray;
-                        font-family: $nene;
-                    }
-                }
+    .pj_info_top {
+        font-size: $font-14;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 25px;
+
+        .info_type {
+            display: flex;
+            gap: 10px;
+            font-family: $nene;
+            li {
+                color: $color-gray;
+                font-family: $nene;
+                
             }
         }
+    }
+}
 
 .pj_content {
-                    line-height: 120%;
-                }
+    line-height: 120%;
+}
 
 
 .sub_title {
@@ -62,19 +63,19 @@ section {
 
 }
 
-.pj_brand_name { font-family: $nene;
-                    font-size: $font-14;
-                    font-weight: $font-m;
-                }
+.pj_brand_name {
+    font-family: $archivo;
+    font-size: $font-18;
+    font-weight: $font-m;
+}
 
 .close_btn {}
 
 
 /* ----------------------- 헤더+메인 */
 .main_page_wrap {
-    display: grid;
-    grid-template-columns: 2fr 8fr;
-    gap: 40px;
+
+    padding: 0 30px;
 }
 
 
@@ -82,10 +83,13 @@ section {
 
 /* ----------------------- 헤더 */
 header {
+    position: fixed;
     @include display-op;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
+    margin-right: 40px;
+    width: 20%;
 
     h1 {
         width: 50px;
@@ -113,22 +117,83 @@ header {
     }
 
     .work {
-        margin-bottom: 20px;
+        position: relative;
+        margin-bottom: 50px;
         display: flex;
         flex-flow: column nowrap;
         gap: 20px;
 
-        :nth-of-type(2) {
+        h3 {
+            width: 100%;
+        }
 
+        h3:nth-of-type(2) {
             padding: 20px 0 20px 15px;
             border-bottom: 1px solid #212121;
             border-top: 1px solid #212121;
+        }
+
+        .hover_img {
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            position: absolute;
+            width: 100%;
+
+        }
+
+        .hvr_meal {
+
+            display: none;
+            width: 150px !important;
+            height: 150px;
+            top: 10%;
+            left: 105%;
+            background-color: aqua;
+        }
+
+        .hvr_dgb {
+            display: none;
+            width: 160px !important;
+            height: 160px;
+            top: 20%;
+            left: 120%;
+            background-color: yellowgreen;
+        }
+
+        .hvr_spyder {
+            display: none;
+            width: 160px !important;
+            height: 160px;
+            top: 30%;
+            left: 110%;
+            background-color: violet;
+        }
+
+        h3:nth-of-type(1):hover~.hvr_meal {
+            display: block;
+        }
+
+        h3:nth-of-type(2):hover~.hvr_dgb {
+            display: block;
+        }
+
+        h3:nth-of-type(3):hover~.hvr_spyder {
+            display: block;
         }
     }
 
 }
 
-h3 {
+
+header.active {
+    display: none;
+}
+
+h3  {
     cursor: pointer;
     width: 100%;
     padding-left: 15px;
@@ -140,7 +205,20 @@ h3:hover {
     color: $color-point;
 }
 
+
+
+
 /* ----------------------- 메인 */
+
+
+
+main {
+    margin-left: 22%;
+    position: absolute;
+    width: 76%;
+    padding-right: 20px;
+}
+
 
 .intro_page {
     display: flex;
@@ -153,12 +231,23 @@ h3:hover {
         p {}
     }
 
+    .title_wrap {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-end;
+
+    }
+
     .title {
+
+        width: max-content;
+
         P {
             font-family: $nene;
         }
 
         P:first-child {
+            width: max-content;
             font-weight: $font-m ;
             font-size: $font-80;
         }
@@ -170,6 +259,9 @@ h3:hover {
     }
 }
 
+.intro_page.active {
+    display: none;
+}
 
 /* ----------------------- about */
 
@@ -206,68 +298,115 @@ h3:hover {
             font-size: $font-18;
         }
     }
-
-    .skill_wrap {
-        padding-right: 5%;
+    .skill_wrap_wrap {
         display: flex;
         flex-flow: column nowrap;
         align-items: flex-end;
-
-        .skill {
-            width: fit-content;
-
-            li {
-                font-family: $nene;
-                margin-bottom: 10px;
-                font-size: $font-34;
-                color: $color-gray;
-
-                strong {
-                    font-weight: 200;
-                    font-size: $font-20;
-                    color: $color-gray;
-                    margin-right: 5px;
+        .skill_wrap {
+            padding-right: 80px;
+            margin-top: 80px;
+            width: max-content;
+            float: right;
+            display: flex;
+            gap:60px;
+            .sw { 
+                .skill_title {
+                    letter-spacing: 0px;
+                    font-family: $archivo;
+                    font-size: $font-16;
+                    color: #212121;
+                }
+                .skill_content {
+                    letter-spacing: 0px;
+                    font-family: $archivo;
+                    font-size: $font-16;
+                    color: #212121;
                 }
             }
+            .sw1 {}
+            .sw2 {}
+            .sw3 {}
         }
     }
+    
+}
+
+.about_page.active {
+    display: none;
 }
 
 /* ----------------------- work 카드 wrap 공통 */
 
 .work_page .pj_wrap:nth-child(2) {
-border-bottom: 1px solid #767676;
-border-top: 1px solid #767676;
-padding: 25px 0;
+    border-bottom: 1px solid #767676;
+    border-top: 1px solid #767676;
+    padding: 25px 0;
 }
 
 .work_page {
+    .pj_info {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 200px;
+    
+        .pj_info_top {
+            font-size: $font-14;
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 25px;
+    
+            .info_type {
+                display: flex;
+                gap: 10px;
+                font-family: $nene;
+                li {
+                    color: $color-gray;
+                    font-family: $nene;
+                    
+                }
+            }
+        }
+    }
+    
+    .pj_content {
+        line-height: 120%;
+    }
+
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;
-    gap:25px;
+    /* align-items: center; */
+    gap: 25px;
     padding: 30px 0;
-    width: 100%;
+
     .pj_wrap {
+        cursor: pointer;
         display: grid;
         grid-template-columns: 2.5fr 7.5fr;
+        width: 100%;
+        .tools,
+        .tools_app {
+            line-height: 150%;
+        }
         width: 96%;
         .pj_info {
             display: flex;
             flex-flow: column nowrap;
             gap: 200px;
+
             .pj_info_top {
                 font-size: $font-14;
                 display: flex;
                 flex-flow: column nowrap;
-                gap:25px;
+                gap: 25px;
+
                 .info_type {
                     display: flex;
                     gap: 10px;
 
                     li {
                         color: $color-gray;
-                        font-family: $nene;
+                        font-family: $archivo;
+                        font-weight: 400;
                     }
                 }
 
@@ -276,19 +415,22 @@ padding: 25px 0;
                 }
 
                 .pj_brand_name {
-                    font-size: $font-14;
+                    font-size: $font-18;
                     font-weight: $font-m;
+                    color: red;
                 }
             }
 
             .pj_info_bottom {
-                
+
                 ul {
                     li {
                         font-size: $font-14;
                         display: flex;
                         margin-bottom: 20px;
-                        p {width: 120px;
+
+                        p {
+                            width: 120px;
                             color: $color-gray01;
 
                             span {}
@@ -297,65 +439,132 @@ padding: 25px 0;
                 }
 
             }
+
+
+        
+    }
+    .pj_thumbnail {
+        display: flex;
+        gap: 20px;
+
+        .thumbnain_img {
+
+            width: 200px;
+            background-color: aqua;
+            height: 200px;
         }
 
-        .pj_thumbnail {
-            display: flex;
-            gap:20px;
-            .thumbnain_img {
-                
-                width: 200px; background-color: aqua;
-                height: 200px;
-            }
-            img {
-                
-            }
-        }
+        img {}
     }
+    }
+        
 }
 
+.work_page.active {
+    display: none;
+}
 
 /* ----------------------- 프로젝트 전체 공통 */
 
+.pj_whole.active {
+    display: none;
+}
+
+
 .pj_whole {
-    display: grid;
-    grid-template-columns: 1.8fr 8.2fr;
-    .pj_info {
-        @include display-op;
-        .pj_info_top {
-            
-            .row1 {
-                justify-content: space-between;
-                display: flex;
-                .close_btn {
-                    margin-right: 20px;
+    .row1 {position: fixed;
+        background-color: blueviolet;
+        padding-top:10px;
+        width: 15%;
+        h1 {
+            margin-left:20px;
+            width: 35px; height: 35px;
+            a { width: 100%; height: 100%;
+                img {width: 100%; height: 100%;}
+            }
+        }
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        p {
+            .close_btn {
+                
+                margin-right: 20px;
+                svg {
+                    transform: rotate(180deg);
                 }
             }
-
-            a {
-                /* 프로토타입 있는 경우 */
-            }
-        
-            
         }
+    }
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    .pj_info {
+        padding: 30px 0 0 20px !important;
+        position: fixed;
+        top:45px;
+        height: 100vh;
+        width: 15%;
+        @include display-op;
+        transform: translateX(0);
+        transition: transform 0.2s ease;
+        .pj_info_top {
+
+            
+            .row2 {
+                background-color: darkgreen;
+            }
+            .link_pro {
+                margin-top: 20px;
+                padding-bottom: 5px;
+                border-bottom: 1px solid #999;
+                width: max-content;
+                color:#999;
+            }
+
+
+        }
+
         .pj_info_bottom {
             ul {
-                    li {
-                        font-size: $font-14;
-                        display: flex;
-                        margin-bottom: 20px;
-                        p {width: 90px;
-                            color: $color-gray01;
+                li {
+                    font-size: $font-14;
+                    display: flex;
+                    margin-bottom: 20px;
 
-                            span {}
-                        }
+                    p {
+                        width: 90px;
+                        color: $color-gray01;
                     }
+
                 }
+            }
+
+            .tools,
+            .tools_app {
+                line-height: 150%;
+            }
         }
     }
-    .pj_whole_img {
-        height: 300px;
-        background-color: darkgoldenrod;
-        width: 100%;
+
+    .pj_info.active {
+        transform: translateX(-400px);
     }
+}
+
+.pj_whole_img {
+    margin-left: 15%;
+    height: 5000px;
+
+    background-color: linear-gradient(0deg,rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+    width: 100%;
+
+    img {
+        display: block;
+        width: 100%; height: 100%;
+    }
+}
+
+.pj_whole_img.active {
+    margin-left: 0;
 }
