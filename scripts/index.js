@@ -8,7 +8,6 @@ const closeBtn=document.querySelectorAll('.close_btn')
 const whAllinfo=document.querySelectorAll('.pj_info')
 const whAllimg=document.querySelectorAll('.pj_whole_img')
 
-
 const pjWrap = document.querySelectorAll('.pj_wrap')
 
 
@@ -62,6 +61,7 @@ workBtn.addEventListener('click',()=>{
 /* ----------헤더에 있는 mealB 눌렀을때 */
 
 hdrPjName[0].addEventListener('click',()=>{
+    work.classList.add('active')
     hdr.classList.add('active')
     whAll[0].classList.remove('active')
 
@@ -75,6 +75,7 @@ hdrPjName[0].addEventListener('click',()=>{
 /* ----------헤더에 있는 동구밭 눌렀을때 */
 
 hdrPjName[1].addEventListener('click',()=>{
+    work.classList.add('active')
     hdr.classList.add('active')
     whAll[1].classList.remove('active')
 
@@ -89,6 +90,7 @@ hdrPjName[1].addEventListener('click',()=>{
 /* ----------헤더에 있는 스파이더 눌렀을때 */
 
 hdrPjName[2].addEventListener('click',()=>{
+    work.classList.add('active')
     hdr.classList.add('active')
     whAll[2].classList.remove('active')
 
@@ -171,11 +173,18 @@ closeBtn.addEventListener('click', () => {
     });
 }); 
  */
+
+
+/* --------- 닫기 버튼을 누르면 포폴 페이지 창이 커짐 */
 closeBtn.forEach(btn => {
     btn.addEventListener('click', () => {
-        whAllinfo.forEach(item => item.classList.add('active'));
-        whAllimg.forEach(item => item.classList.add('active'));
+        closeBtn.forEach(item => item.classList.toggle('active'));
+        whAllinfo.forEach(item => item.classList.toggle('active'));
+        whAllimg.forEach(item => item.classList.toggle('active'));
+        /* --------- 열기 버튼을 누르면 포폴 페이지 창이 작아짐 */
+    
     });
+    
 });
 
 

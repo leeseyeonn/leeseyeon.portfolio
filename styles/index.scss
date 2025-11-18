@@ -32,10 +32,11 @@ section {}
             display: flex;
             gap: 10px;
             font-family: $nene;
+
             li {
                 color: $color-gray;
                 font-family: $nene;
-                
+
             }
         }
     }
@@ -142,7 +143,7 @@ header {
 
             position: absolute;
             width: 100%;
-
+            z-index: 999;
         }
 
         .hvr_meal {
@@ -151,7 +152,7 @@ header {
             width: 150px !important;
             height: 150px;
             top: 10%;
-            left: 105%;
+            left: 110%;
             background-color: aqua;
         }
 
@@ -160,7 +161,7 @@ header {
             width: 160px !important;
             height: 160px;
             top: 20%;
-            left: 120%;
+            left: 110%;
             background-color: yellowgreen;
         }
 
@@ -193,7 +194,7 @@ header.active {
     display: none;
 }
 
-h3  {
+h3 {
     cursor: pointer;
     width: 100%;
     padding-left: 15px;
@@ -298,24 +299,28 @@ main {
             font-size: $font-18;
         }
     }
+
     .skill_wrap_wrap {
         display: flex;
         flex-flow: column nowrap;
         align-items: flex-end;
+
         .skill_wrap {
             padding-right: 80px;
             margin-top: 80px;
             width: max-content;
             float: right;
             display: flex;
-            gap:60px;
-            .sw { 
+            gap: 60px;
+
+            .sw {
                 .skill_title {
                     letter-spacing: 0px;
                     font-family: $archivo;
                     font-size: $font-16;
                     color: #212121;
                 }
+
                 .skill_content {
                     letter-spacing: 0px;
                     font-family: $archivo;
@@ -323,12 +328,15 @@ main {
                     color: #212121;
                 }
             }
+
             .sw1 {}
+
             .sw2 {}
+
             .sw3 {}
         }
     }
-    
+
 }
 
 .about_page.active {
@@ -348,26 +356,27 @@ main {
         display: flex;
         flex-flow: column nowrap;
         gap: 200px;
-    
+
         .pj_info_top {
             font-size: $font-14;
             display: flex;
             flex-flow: column nowrap;
             gap: 25px;
-    
+
             .info_type {
                 display: flex;
                 gap: 10px;
-                font-family: $nene;
+                font-family: $archivo;
+
                 li {
                     color: $color-gray;
                     font-family: $nene;
-                    
+
                 }
             }
         }
     }
-    
+
     .pj_content {
         line-height: 120%;
     }
@@ -383,11 +392,14 @@ main {
         display: grid;
         grid-template-columns: 2.5fr 7.5fr;
         width: 100%;
+
         .tools,
         .tools_app {
             line-height: 150%;
         }
+
         width: 96%;
+
         .pj_info {
             display: flex;
             flex-flow: column nowrap;
@@ -402,6 +414,7 @@ main {
                 .info_type {
                     display: flex;
                     gap: 10px;
+                    font-family: $archivo;
 
                     li {
                         color: $color-gray;
@@ -415,9 +428,9 @@ main {
                 }
 
                 .pj_brand_name {
-                    font-size: $font-18;
-                    font-weight: $font-m;
-                    color: red;
+                    font-family: $archivo;
+    font-size: $font-18;
+    font-weight: $font-m;
                 }
             }
 
@@ -441,23 +454,24 @@ main {
             }
 
 
-        
-    }
-    .pj_thumbnail {
-        display: flex;
-        gap: 20px;
 
-        .thumbnain_img {
-
-            width: 200px;
-            background-color: aqua;
-            height: 200px;
         }
 
-        img {}
+        .pj_thumbnail {
+            display: flex;
+            gap: 20px;
+
+            .thumbnain_img {
+
+                width: 200px;
+                background-color: aqua;
+                height: 200px;
+            }
+
+            img {}
+        }
     }
-    }
-        
+
 }
 
 .work_page.active {
@@ -472,54 +486,75 @@ main {
 
 
 .pj_whole {
-    .row1 {position: fixed;
-        background-color: blueviolet;
-        padding-top:10px;
+    .row1 {
+        position: fixed;
+        background-color: #f2f2f2;
+        padding-top: 10px;
+        padding-bottom: 5px;
         width: 15%;
+
         h1 {
-            margin-left:20px;
-            width: 35px; height: 35px;
-            a { width: 100%; height: 100%;
-                img {width: 100%; height: 100%;}
-            }
-        }
-        justify-content: space-between;
-        display: flex;
-        align-items: center;
-        p {
-            .close_btn {
-                
-                margin-right: 20px;
-                svg {
-                    transform: rotate(180deg);
+            margin-left: 20px;
+            width: 35px;
+            height: 35px;
+
+            a {
+                width: 100%;
+                height: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
                 }
             }
         }
+
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+
+        p {
+            .close_btn {
+
+                margin-right: 20px;
+                transform: rotate(180deg);
+                transition: transform 0.2s ease;
+                svg {
+                }
+            }
+            .close_btn.active {
+        transform: rotate(0deg);
     }
+        }
+    }
+    
     display: flex;
     height: 100vh;
     width: 100%;
+
     .pj_info {
         padding: 30px 0 0 20px !important;
         position: fixed;
-        top:45px;
+        top: 45px;
         height: 100vh;
         width: 15%;
         @include display-op;
         transform: translateX(0);
         transition: transform 0.2s ease;
+
         .pj_info_top {
 
-            
+
             .row2 {
                 background-color: darkgreen;
             }
+
             .link_pro {
                 margin-top: 20px;
                 padding-bottom: 5px;
                 border-bottom: 1px solid #999;
                 width: max-content;
-                color:#999;
+                color: #999;
             }
 
 
@@ -553,15 +588,17 @@ main {
 }
 
 .pj_whole_img {
+    transition: all 0.2s ease;
     margin-left: 15%;
     height: 5000px;
 
-    background-color: linear-gradient(0deg,rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+    background-color: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
     width: 100%;
 
     img {
         display: block;
-        width: 100%; height: 100%;
+        width: 100%;
+        height: 100%;
     }
 }
 
