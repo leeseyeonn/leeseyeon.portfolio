@@ -75,7 +75,6 @@ section {}
 
 /* ----------------------- 헤더+메인 */
 .main_page_wrap {
-
     padding: 0 30px;
 }
 
@@ -109,11 +108,11 @@ header {
     }
 
     h2 {
-
         .about_btn,
         .work_btn {
             @include cate;
             margin-bottom: 20px;
+            font-size: $font-24;
         }
     }
 
@@ -492,6 +491,9 @@ main {
         padding-top: 10px;
         padding-bottom: 5px;
         width: 15%;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
 
         h1 {
             margin-left: 20px;
@@ -508,11 +510,11 @@ main {
                 }
             }
         }
-
-        justify-content: space-between;
-        display: flex;
-        align-items: center;
-
+        .pj_brand_name {
+            font-family:$archivo;
+            font-size: $font-16;
+        }
+        
         p {
             .close_btn {
 
@@ -550,7 +552,6 @@ main {
             }
 
             .link_pro {
-                margin-top: 20px;
                 padding-bottom: 5px;
                 border-bottom: 1px solid #999;
                 width: max-content;
