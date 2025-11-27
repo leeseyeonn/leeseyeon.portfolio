@@ -349,10 +349,14 @@ main {
   gap: 20px;
 }
 .work_page .pj_wrap .pj_thumbnail .thumbnain_img {
-  width: 200px;
-  background-color: aqua;
-  height: 200px;
+  width: 100%;
+  height: auto;
+  /* background-color: aqua; */
 }
+.work_page .pj_wrap .pj_thumbnail img {
+  width: 100%;
+}
+
 .work_page.active {
   display: none;
 }
@@ -421,6 +425,11 @@ main {
   border-bottom: 1px solid #999;
   width: max-content;
   color: #999;
+}
+.pj_whole .pj_info .pj_info_top .site_list {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 15px;
 }
 .pj_whole .pj_info .pj_info_bottom ul li {
   font-size: 0.875rem;

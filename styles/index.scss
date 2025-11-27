@@ -462,12 +462,12 @@ main {
 
             .thumbnain_img {
 
-                width: 200px;
-                background-color: aqua;
-                height: 200px;
+                width: 100%;
+                height: auto;
+                /* background-color: aqua; */
             }
 
-            img {}
+            img {width: 100%;}
         }
     }
 
@@ -558,7 +558,11 @@ main {
                 color: #999;
             }
 
-
+            .site_list {
+                display: flex;
+                flex-flow: column nowrap;
+                gap: 15px;
+            }
         }
 
         .pj_info_bottom {
