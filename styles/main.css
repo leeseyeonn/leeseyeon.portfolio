@@ -426,6 +426,9 @@ main {
   width: max-content;
   color: #999;
 }
+.pj_whole .pj_info .pj_info_top .link_pro:hover {
+  color: #212121;
+}
 .pj_whole .pj_info .pj_info_top .site_list {
   display: flex;
   flex-flow: column nowrap;
@@ -465,10 +468,20 @@ main {
   margin-left: 0;
 }
 
-
-.dgb_whole .pj_whole_img {height: 100vh;}
-
-.spyder_whole .pj_whole_img {height: 100vh;}
-
+.dgb_whole .pj_whole_img .project_index:last-child {
+  position: relative;
+}
+.dgb_whole .pj_whole_img .project_index:last-child .cafe24now span {
+  color: #fff;
+  margin-right: 5px;
+}
+.dgb_whole .pj_whole_img .project_index:last-child .cafe24now {
+  font-size: 0.875rem;
+  color: #fff;
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 /*# sourceMappingURL=main.css.map */

@@ -557,7 +557,9 @@ main {
                 width: max-content;
                 color: #999;
             }
-
+            .link_pro:hover {
+                color: #212121;
+            }
             .site_list {
                 display: flex;
                 flex-flow: column nowrap;
@@ -609,4 +611,24 @@ main {
 
 .pj_whole_img.active {
     margin-left: 0;
+}
+
+.dgb_whole {
+    .pj_whole_img {
+        .project_index:last-child {
+            position: relative;
+            .cafe24now {
+                span {
+                    color: #fff;;
+                    margin-right: 5px;
+                }
+                font-size: $font-14;
+                color: #fff;;
+                position: absolute;
+                bottom:100px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
 }
