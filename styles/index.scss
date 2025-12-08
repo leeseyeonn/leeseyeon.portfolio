@@ -43,7 +43,7 @@ section {}
 }
 
 .pj_content {
-    line-height: 120%;
+    line-height: 150%;
 }
 
 
@@ -462,7 +462,7 @@ main {
 
             .thumbnain_img {
 
-                width: 100%;
+                width: 90%;
                 height: auto;
                 /* background-color: aqua; */
             }
@@ -526,6 +526,9 @@ main {
             }
             .close_btn.active {
         transform: rotate(0deg);
+    }
+    .close_btn:hover {
+        background-color:#e8e8e8;
     }
         }
     }
@@ -626,6 +629,26 @@ main {
                 color: #fff;;
                 position: absolute;
                 bottom:100px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+.spyder_whole {
+    .pj_whole_img {
+        .project_index:last-child {
+            position: relative;
+            .cafe24now {
+                span {
+                    color: #fff;;
+                    margin-right: 5px;
+                }
+                font-size: $font-14;
+                color: #fff;;
+                position: absolute;
+                bottom:200px;
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
