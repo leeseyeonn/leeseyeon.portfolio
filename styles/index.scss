@@ -20,15 +20,16 @@ section {}
 .pj_info {
     display: flex;
     flex-flow: column nowrap;
-    gap: 200px;
+    justify-content: space-between;
 
     .pj_info_top {
         font-size: $font-14;
         display: flex;
         flex-flow: column nowrap;
-        gap: 25px;
+        gap: 90px;
 
         .info_type {
+            margin-bottom: 15px;
             display: flex;
             gap: 10px;
             font-family: $nene;
@@ -65,9 +66,13 @@ section {}
 }
 
 .pj_brand_name {
+    cursor: pointer;
     font-family: $archivo;
     font-size: $font-18;
     font-weight: $font-m;
+}
+.row1 .pj_brand_name:hover {
+    color:#999;
 }
 
 .close_btn {}
@@ -84,7 +89,8 @@ section {}
 /* ----------------------- 헤더 */
 header {
     position: fixed;
-    @include display-op;
+    padding: 30px 0 90px 0;
+    height: 100vh;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
@@ -107,14 +113,32 @@ header {
         }
     }
 
-    h2 {
-        .about_btn,
-        .work_btn {
-            @include cate;
-            margin-bottom: 20px;
-            font-size: $font-24;
+    .header_btn {
+        display: flex;
+        flex-flow: column nowrap;
+        gap:30px;
+        h2 {
+            .about_btn,
+            .work_btn,
+            a {
+                text-align: left;
+                display: block;
+                @include cate;
+                margin-bottom: 0px;
+                font-size: $font-30;
+                font-family:$nene ;
+                padding-bottom: 15px;
+                border-bottom:1px solid #656565 ;
+                width: 100%;
+            }
         }
+        .about_btn:hover,
+            .work_btn:hover,
+            a:hover {
+                color: $color-point;
+            }
     }
+    
 
     .work {
         position: relative;
@@ -201,9 +225,7 @@ h3 {
     font-family: $orbit;
 }
 
-h3:hover {
-    color: $color-point;
-}
+
 
 
 
@@ -225,6 +247,7 @@ main {
     flex-flow: column nowrap;
     justify-content: space-between;
     @include display-op;
+    height: 100vh;
 
     .sub_title {
 
@@ -486,6 +509,7 @@ main {
 
 .pj_whole {
     .row1 {
+        z-index: 999;
         position: fixed;
         background-color: #f2f2f2;
         padding-top: 10px;
@@ -538,7 +562,7 @@ main {
     width: 100%;
 
     .pj_info {
-        padding: 30px 0 0 20px !important;
+        padding: 30px 0 120px 20px !important;
         position: fixed;
         top: 45px;
         height: 100vh;
@@ -555,13 +579,20 @@ main {
             }
 
             .link_pro {
-                padding-bottom: 5px;
-                border-bottom: 1px solid #999;
+                display: flex;
+                gap: 3px;
+                /* border-bottom: 1px solid #999; */
                 width: max-content;
-                color: #999;
+                color: #212121;
             }
             .link_pro:hover {
-                color: #212121;
+                svg {
+                    path {
+                        stroke:$color-point;
+                    }
+                    
+                }
+                color: $color-point;
             }
             .site_list {
                 display: flex;

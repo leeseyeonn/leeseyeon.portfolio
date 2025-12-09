@@ -9,15 +9,16 @@ body {
 .pj_info {
   display: flex;
   flex-flow: column nowrap;
-  gap: 200px;
+  justify-content: space-between;
 }
 .pj_info .pj_info_top {
   font-size: 0.875rem;
   display: flex;
   flex-flow: column nowrap;
-  gap: 25px;
+  gap: 90px;
 }
 .pj_info .pj_info_top .info_type {
+  margin-bottom: 15px;
   display: flex;
   gap: 10px;
   font-family: "neue-haas-grotesk-display", sans-serif;
@@ -46,9 +47,14 @@ body {
 }
 
 .pj_brand_name {
+  cursor: pointer;
   font-family: "archivo", sans-serif;
   font-size: 1.125rem;
   font-weight: 500;
+}
+
+.row1 .pj_brand_name:hover {
+  color: #999;
 }
 
 /* ----------------------- 헤더+메인 */
@@ -59,7 +65,7 @@ body {
 /* ----------------------- 헤더 */
 header {
   position: fixed;
-  padding: 30px 0;
+  padding: 30px 0 90px 0;
   height: 100vh;
   display: flex;
   flex-flow: column nowrap;
@@ -80,13 +86,30 @@ header h1 a img {
   width: 100%;
   height: 100%;
 }
-header h2 .about_btn,
-header h2 .work_btn {
+header .header_btn {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 30px;
+}
+header .header_btn h2 .about_btn,
+header .header_btn h2 .work_btn,
+header .header_btn h2 a {
+  text-align: left;
+  display: block;
   font-family: "neue-haas-grotesk-display", sans-serif;
   font-weight: 500;
   font-size: 2.25rem;
-  margin-bottom: 20px;
-  font-size: 1.5rem;
+  margin-bottom: 0px;
+  font-size: 1.875rem;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #656565;
+  width: 100%;
+}
+header .header_btn .about_btn:hover,
+header .header_btn .work_btn:hover,
+header .header_btn a:hover {
+  color: #FF4006;
 }
 header .work {
   position: relative;
@@ -158,10 +181,6 @@ h3 {
   font-family: "orbit", sans-serif;
 }
 
-h3:hover {
-  color: #FF4006;
-}
-
 /* ----------------------- 메인 */
 main {
   margin-left: 22%;
@@ -205,7 +224,6 @@ main {
 /* ----------------------- about */
 .about_page {
   padding: 30px 0;
-  height: 100vh;
   display: flex;
   flex-flow: column nowrap;
   gap: 120px;
@@ -367,6 +385,7 @@ main {
 }
 
 .pj_whole .row1 {
+  z-index: 999;
   position: fixed;
   background-color: #f2f2f2;
   padding-top: 10px;
@@ -410,13 +429,12 @@ main {
   width: 100%;
 }
 .pj_whole .pj_info {
-  padding: 30px 0 0 20px !important;
+  padding: 30px 0 120px 20px !important;
   position: fixed;
   top: 45px;
   height: 100vh;
   width: 15%;
   padding: 30px 0;
-  height: 100vh;
   transform: translateX(0);
   transition: transform 0.2s ease;
 }
@@ -424,13 +442,17 @@ main {
   background-color: darkgreen;
 }
 .pj_whole .pj_info .pj_info_top .link_pro {
-  padding-bottom: 5px;
-  border-bottom: 1px solid #999;
+  display: flex;
+  gap: 3px;
+  /* border-bottom: 1px solid #999; */
   width: max-content;
-  color: #999;
+  color: #212121;
+}
+.pj_whole .pj_info .pj_info_top .link_pro:hover svg path {
+  stroke: #FF4006;
 }
 .pj_whole .pj_info .pj_info_top .link_pro:hover {
-  color: #212121;
+  color: #FF4006;
 }
 .pj_whole .pj_info .pj_info_top .site_list {
   display: flex;

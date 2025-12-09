@@ -17,7 +17,9 @@ const workBtn = document.querySelector('.work_btn')
 
 const hdrPjName = document.querySelectorAll('.project_name')
 
+const pjName = document.querySelectorAll('.row1 .pj_brand_name')
 
+console.log(pjName)
 
 /*  -------------------- 초기값 (헤더와 인트로만 있는 상태)  */
 
@@ -47,7 +49,7 @@ aboutBtn.addEventListener('click', () => {
     });
 })
 
-/* ---------work 글자 눌렀을 때--------- */
+ //---------work 글자 눌렀을 때--------- 
 
 workBtn.addEventListener('click',()=>{
     work.classList.remove('active')
@@ -58,7 +60,7 @@ workBtn.addEventListener('click',()=>{
     });
 })
 
-/* ----------헤더에 있는 mealB 눌렀을때 */
+/*  //----------헤더에 있는 mealB 눌렀을때 
 
 hdrPjName[0].addEventListener('click',()=>{
     work.classList.add('active')
@@ -72,7 +74,7 @@ hdrPjName[0].addEventListener('click',()=>{
     about.classList.add('active')
 })
 
-/* ----------헤더에 있는 동구밭 눌렀을때 */
+// ----------헤더에 있는 동구밭 눌렀을때 
 
 hdrPjName[1].addEventListener('click',()=>{
     work.classList.add('active')
@@ -87,7 +89,7 @@ hdrPjName[1].addEventListener('click',()=>{
 })
 
 
-/* ----------헤더에 있는 스파이더 눌렀을때 */
+//----------헤더에 있는 스파이더 눌렀을때 
 
 hdrPjName[2].addEventListener('click',()=>{
     work.classList.add('active')
@@ -101,7 +103,7 @@ hdrPjName[2].addEventListener('click',()=>{
     about.classList.add('active')
     
 })
-
+ */
 
 /* ---------------------목록에 있는 밀비 눌렀을때 */
 
@@ -188,3 +190,16 @@ closeBtn.forEach(btn => {
 });
 
 
+//프로젝트 이름 누르면 work 페이지로 이동
+
+pjName.forEach(pjn => {
+    pjn.addEventListener('click', () => {
+        whAll.forEach(item => {
+            item.classList.add('active');
+        });
+        work.classList.remove('active')
+        intro.classList.add('active')
+        about.classList.add('active')
+        hdr.classList.remove('active')
+    })
+})
